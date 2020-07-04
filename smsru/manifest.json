@@ -1,0 +1,6 @@
+{
+  "domain": "smsru",
+  "name": "SMS.RU Service",
+  "documentation": "https://github.com/Forne/ha-smsru",
+  "codeowners": ["@forne"]
+}
