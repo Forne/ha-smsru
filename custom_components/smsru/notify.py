@@ -11,8 +11,8 @@ from homeassistant.const import (
     CONF_API_KEY,
     CONF_SENDER,
     CONTENT_TYPE_JSON,
-    HTTP_OK,
 )
+from http import HTTPStatus
 import homeassistant.helpers.config_validation as cv
 
 _LOGGER = logging.getLogger(__name__)
@@ -64,7 +64,7 @@ class SmsruNotificationService(BaseNotificationService):
             }
             resp = requests.get(api_url, params=url_param, timeout=TIMEOUT)
 
-            if resp.status_code != HTTP_OK:
+            if resp.status_code != HTTPStatus.OK:
                 _LOGGER.error("Error %s", resp.status_code)
             else:
                 data = resp.json()
